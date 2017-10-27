@@ -10,29 +10,29 @@ HiChat.prototype = {
         var that = this;
         this.socket = io.connect();
         this.socket.on('connect', function() {
-            document.getElementById('info').textContent = 'get yourself a nickname :)';
+            document.getElementById('info').textContent = '请出示你的名字';
             document.getElementById('nickWrapper').style.display = 'block';
             document.getElementById('nicknameInput').focus();
         });
         this.socket.on('nickExisted', function() {
-            document.getElementById('info').textContent = '!nickname is taken, choose another pls';
+            document.getElementById('info').textContent = '!名字被占用, 请使用其他名字';
         });
         this.socket.on('loginSuccess', function() {
-            document.title = 'hichat | ' + document.getElementById('nicknameInput').value;
+            document.title = '嗨聊 | ' + document.getElementById('nicknameInput').value;
             document.getElementById('loginWrapper').style.display = 'none';
             document.getElementById('messageInput').focus();
         });
         this.socket.on('error', function(err) {
             if (document.getElementById('loginWrapper').style.display == 'none') {
-                document.getElementById('status').textContent = '!fail to connect :(';
+                document.getElementById('status').textContent = '!连接失败';
             } else {
-                document.getElementById('info').textContent = '!fail to connect :(';
+                document.getElementById('info').textContent = '!连接失败';
             }
         });
         this.socket.on('system', function(nickName, userCount, type) {
-            var msg = nickName + (type == 'login' ? ' joined' : ' left');
-            that._displayNewMsg('system ', msg, 'red');
-            document.getElementById('status').textContent = userCount + (userCount > 1 ? ' users' : ' user') + ' online';
+            var msg = nickName + (type == 'login' ? '加入' : '离开');
+            that._displayNewMsg('系统', msg, 'red');
+            document.getElementById('status').textContent = userCount + '名用户 在线';
         });
         this.socket.on('newMsg', function(user, msg, color) {
             that._displayNewMsg(user, msg, color);

@@ -22,7 +22,8 @@ html, body {
 .wrapper {
     height: 700px;
     margin: 0 auto;
-    background-color: #ddd;
+    background:url(../content/chatbg.jpg) no-repeat;
+    background-size: 100% 100%;
 }
 #loginWrapper {
     position: fixed;
@@ -31,6 +32,8 @@ html, body {
     bottom: 0;
     left: 0;
    	margin:0 auto;
+   	background: url(../content/bg.gif) no-repeat;
+   	background-size: 100% 100%;
     background-color: rgba(5, 5, 5, .6);
     text-align: center;
     color: #fff;
@@ -42,13 +45,16 @@ html, body {
     width: 100%;
 }
 .banner {
-    height: 80px;
+    height: 94px;
     width: 95%;
     margin-left: 2%;
 }
 .banner p {
     float: left;
     display: inline-block;
+}
+#status {
+	color: #fff;
 }
 .controls {
     height: 190px;
@@ -79,14 +85,35 @@ html, body {
 .items input{
 	width: 50px;
 	height: 30px;
+	margin-right: 20px;
 	line-height: 30px;
 	background-color: #FFFFFF;
 	border: 0;
 }
+#emoji{
+	width: 30px;
+	height: 30px;
+	background: url(../content/emoij.png);
+	background-size: 100% 100%;
+}
+#image{
+	width: 30px;
+	height: 30px;
+	background: url(../content/image.png);
+	background-size: 100% 100%;
+}
+#clearBtn {
+	width: 30px;
+	height: 30px;
+	float: right;
+	border-radius: 50%;
+	background: url(../content/clear.png);
+	background-size: 100% 100%;
+}
 #colorStyle {
-    width: 60px;
-    height: 30px;
-    line-height: 30px;
+    width: 40px;
+    height: 10px;
+    margin-top: 10px;
     border: 0;
     padding: 0;
 }
