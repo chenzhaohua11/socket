@@ -3,10 +3,24 @@ html, body {
     background-color: #efefef;
     font-family: sans-serif;
 }
+@media screen and (min-width:700px){
+	.wrapper{
+		width: 600px;
+	}
+	#loginWrapper{
+		width: 600px;
+	}
+}
+@media screen and (max-width:700px){
+	.wrapper{
+		width: 100%;
+	}
+	#loginWrapper{
+		width: 100%;
+	}
+}
 .wrapper {
-    width: 500px;
-    height: 640px;
-    padding: 5px;
+    height: 700px;
     margin: 0 auto;
     background-color: #ddd;
 }
@@ -16,6 +30,7 @@ html, body {
     right: 0;
     bottom: 0;
     left: 0;
+   	margin:0 auto;
     background-color: rgba(5, 5, 5, .6);
     text-align: center;
     color: #fff;
@@ -24,25 +39,29 @@ html, body {
 }
 #nickWrapper {
     display: none;
+    width: 100%;
 }
 .banner {
     height: 80px;
-    width: 100%;
+    width: 95%;
+    margin-left: 2%;
 }
 .banner p {
     float: left;
     display: inline-block;
 }
 .controls {
-    height: 100px;
+    height: 190px;
     margin: 5px 0px;
     position: relative;
+    margin-left: 2%;
 }
 #historyMsg {
-    height: 400px;
+	width: 98%;
+    height: 350px;
+    margin-left: 1%;
     background-color: #fff;
     overflow: auto;
-    padding: 2px;
 }
 #historyMsg img {
     max-width: 99%;
@@ -53,12 +72,24 @@ html, body {
 .items {
     height: 30px;
 }
+.items *{
+	float: left;
+	margin-right: 8px;
+}
+.items input{
+	width: 50px;
+	height: 30px;
+	line-height: 30px;
+	background-color: #FFFFFF;
+	border: 0;
+}
 #colorStyle {
-    width: 50px;
-    border: none;
+    width: 60px;
+    height: 30px;
+    line-height: 30px;
+    border: 0;
     padding: 0;
 }
-
 
 .imageLable {
     position: relative;
@@ -73,20 +104,25 @@ html, body {
 
 
 #messageInput {
-    width: 440px;
-    max-width: 440px;
+    width: 95%;
     height: 90px;
     max-height: 90px;
     float:left;
+    margin-top: 8px;
 }
 #sendBtn {
-    width: 50px;
-    height: 96px;
-    float: right;
+    width: 20%;
+    height: 40px;
+    position: absolute;
+    bottom:0px;
+    right: 8px;
+    border:0;
+    background-color: #3879D9;
+    color: #FFFFFF;
 }
 #emojiWrapper {
     display: none;
-    width: 500px;
+    width: 80%;
     bottom: 105px;
     position: absolute;
     background-color: #aaa;
